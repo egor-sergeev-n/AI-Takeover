@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include"Tail.hpp"
+#include"/home/pavlova_izabella/AI-Takeover/Tail/Tail.hpp"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
