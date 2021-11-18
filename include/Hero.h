@@ -3,7 +3,7 @@
 #include "Element.h"
 
 // Class of Hero states
-enum class State {STAY, RUN, JUMP, FALL, DIE};
+enum class State {STAY, RUN, JUMP, FALL, DIE, FINISH};
 
 // Crate element Hero with his move
 class Hero : public Element {
