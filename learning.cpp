@@ -161,7 +161,7 @@ float Learning<T>::consultQ(unsigned int st, unsigned int a){
 
 template<class T>
 void Learning<T>::printQ(){
-    std::cout<<"TABLA Q"<<std::endl;
+    std::cout<<"TABLE Q"<<std::endl;
     for(unsigned int i = 0; i<states; i++){
         for(unsigned int j = 0; j<actions; j++){
             std::cout<<std::setprecision(5)<<Qtable[i][j]<<", ";
