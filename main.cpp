@@ -1,9 +1,3 @@
-/*
- *  Author: Ivan Martinez
- *  Assigment: QLearning y Sarsa
- *  Signature: Agentes Inteligentes
- *
- */
 #include <iostream>
 #include "grid.h"
 
