@@ -53,12 +53,11 @@ jobs:
 
       - name: run xvfb
         run: Xvfb :1 -screen 0 640x480x24 -fbdir /var/tmp&
-
-      - name: export DISPLAY
         run: export DISPLAY=localhost:1.0
 
       - name: Run test without valgrind
-        run: cd test/build && DISPLAY=localhost:1.0 ./test
+        run: cd test/build
+        run: xvfb-run --auto-servernum npm ./test
         
       - name: Run vilgrind
         run: cd test/build && valgrind --leak-check=full ./test
