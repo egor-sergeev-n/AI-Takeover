@@ -10,12 +10,17 @@
 
 TEST(TEST_GAME, TEST_BACKGROUND)
 {
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>1\n";
     testing::internal::CaptureStderr();
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>2\n";
     Background b("background_image");
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>3\n";
     std::string output = testing::internal::GetCapturedStderr();
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>4\n";
     ASSERT_EQ(output, "Failed to load image \"background_image\". "
                       "Reason: Unable to open file\nFailed to load "
                       "background texture from file 'background_image'\n");
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>5\n";
 }
 
 TEST(TEST_GAME, TEST_BUTTON)
