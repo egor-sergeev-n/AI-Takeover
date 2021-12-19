@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install xvfb
+        run: apt-get install xvfb
+
       - name: Install boost
         run: sudo apt-get install -f libboost-all-dev
 
@@ -45,11 +48,11 @@ jobs:
       - name: make_test
         run: cd test/build && make
 
-      - name: export DISPLAY
-        run: export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+      - name: run xvfb
+        run: Xvfb :1 -screen 0 640x480x24 -fbdir /var/tmp& && export DISPLAY=localhost:1.0
 
       - name: Run test without valgrind
-        run: cd test/build && ./test
+        run: cd test/build && DISPLAY=localhost:1.0 ./test
         
       - name: Run vilgrind
         run: cd test/build && valgrind --leak-check=full ./test
