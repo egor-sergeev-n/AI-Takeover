@@ -53,7 +53,7 @@ jobs:
 
       - name: run xvfb
         run: |
-         Xvfb :99 &
+         nohup Xvfb :99 &
          export DISPLAY=:99
 
       - name: Run test without valgrind
