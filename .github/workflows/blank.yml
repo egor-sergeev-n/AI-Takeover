@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install boost
+        run: sudo apt-get install -f libboost-all-dev
+
       - name: Install sfml
         run: sudo apt-get install libsfml-dev
     
