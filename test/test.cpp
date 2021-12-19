@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "Background.h"
 #include "Constants.h"
 #include "Gui.h"
