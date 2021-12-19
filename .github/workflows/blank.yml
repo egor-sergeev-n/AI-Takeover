@@ -45,6 +45,9 @@ jobs:
       - name: make_test
         run: cd test/build && make
 
+      - name: export DISPLAY
+        run: export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+
       - name: Run test without valgrind
         run: cd test/build && ./test
         
