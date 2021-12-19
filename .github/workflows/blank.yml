@@ -56,8 +56,9 @@ jobs:
         run: export DISPLAY=localhost:1.0
 
       - name: Run test without valgrind
-        run: cd test/build
-        run: xvfb-run --auto-servernum npm ./test
+        run: |
+         cd test/build
+         xvfb-run --auto-servernum npm ./test
         
       - name: Run vilgrind
         run: cd test/build && valgrind --leak-check=full ./test
