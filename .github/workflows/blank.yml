@@ -16,8 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: update all
+        run: sudo apt-get update
+
       - name: Install xvfb
-        run: apt-get install xvfb
+        run: sudo apt-get -y install xvfb
 
       - name: Install boost
         run: sudo apt-get install -f libboost-all-dev
