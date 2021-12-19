@@ -51,15 +51,12 @@ jobs:
       - name: make_test
         run: cd test/build && make
 
-      - name: run xvfb
-        run: |
-         nohup Xvfb :99 &
-         export DISPLAY=:99
-
       - name: Run test without valgrind
         run: |
          cd test/build
-         ./test
+         xvfb-run -a ./test
         
       - name: Run vilgrind
-        run: cd test/build && valgrind --leak-check=full ./test
+        run: |
+         cd test/build
+         xvfb-run -a valgrind --leak-check=full ./test
