@@ -54,7 +54,7 @@ jobs:
       - name: run xvfb
         run: Xvfb :1 -screen 0 640x480x24 -fbdir /var/tmp&
 
-      -name: export DISPLAY
+      - name: export DISPLAY
         run: export DISPLAY=localhost:1.0
 
       - name: Run test without valgrind
