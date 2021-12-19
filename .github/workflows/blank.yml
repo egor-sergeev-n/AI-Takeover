@@ -53,13 +53,12 @@ jobs:
 
       - name: run xvfb
         run: |
-         Xvfb :1 -screen 0 640x480x24 -fbdir /var/tmp&
-         export DISPLAY=localhost:1.0
+         Xvfb :99 &
+         export DISPLAY=:99
 
       - name: Run test without valgrind
         run: |
          cd test/build
-         xvfb-run --auto-servernum npm test
          ./test
         
       - name: Run vilgrind
