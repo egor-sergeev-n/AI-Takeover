@@ -258,22 +258,33 @@ void Map::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
     sf::Text text_score(score, m_font);
     text_score.setStyle(sf::Text::Bold);
-    text_score.setFillColor(sf::Color::Yellow);
+    text_score.setFillColor(sf::Color{70,70,227});
+    text_score.setCharacterSize(40);
     text_score.setPosition((target.getView().getCenter().x + target.getSize().x / 2 - m_tileSize * 8),
                            (target.getView().getCenter().y - target.getSize().y / 2 + m_tileSize));
     target.draw(text_score);
 
+    std::stringstream ss;
+    ss << std::fixed << std::setprecision(2) << m_game_time;
+    std::string formated_time = ss.str();
     std::string time;
 
+    std::stringstream ss_best;
+    ss_best << std::fixed << std::setprecision(2) << m_best_game_time;
+    std::string best_time = ss_best.str();
+
     if (m_best_game_time == 0)
-        time = "Time: " + (std::to_string(m_game_time)) + "\n";
-    else
-        time = "Time: " + (std::to_string(m_game_time)) + "\n" +
-               "(Best: " + std::to_string(m_best_game_time) + ")";
+        time = "Time: " + formated_time + "\n";
+    else {
+
+        time = "Time: " + formated_time + "\n" + "(Best: " + best_time + ")";
+    }
 
     sf::Text text_time(time, m_font);
+
     text_time.setStyle(sf::Text::Bold);
-    text_time.setFillColor(sf::Color::Yellow);
+    text_time.setFillColor(sf::Color{70,70,227});
+    text_time.setCharacterSize(40);
     text_time.setPosition((target.getView().getCenter().x + target.getSize().x / 2 - m_tileSize * 8),
                           (target.getView().getCenter().y - target.getSize().y / 2 + 2 * m_tileSize));
     target.draw(text_time);

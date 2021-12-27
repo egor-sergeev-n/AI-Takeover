@@ -6,6 +6,8 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include <sstream>
+#include <iomanip>
 
 class Map : public sf::Drawable, public sf::Transformable {
 public:

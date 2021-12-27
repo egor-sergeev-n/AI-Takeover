@@ -264,6 +264,7 @@ void Hero::move_y(float dy) {
     m_is_jump = true;
     m_sprite.move(0, dy);
 
+
     float rect_left = m_sprite.getPosition().x;
     float rect_right = m_sprite.getPosition().x + m_texture_size.x * m_sprite.getScale().x;
     float rect_top = m_sprite.getPosition().y;
