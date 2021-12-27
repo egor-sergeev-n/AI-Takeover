@@ -98,8 +98,6 @@ bool Hero::isFinished() const {
     return (m_state == State::FINISHED);
 }
 
-
-
 bool Hero::isDead() const {
     return (m_state == State::DIED);
 }
