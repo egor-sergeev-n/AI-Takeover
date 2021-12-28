@@ -76,7 +76,7 @@ void Level::readScoreFile(const size_t num_of_level) {
     std::ifstream file("../Files/results_" + std::to_string(num_of_level) + ".txt");
 
     if (!file.is_open()) {
-        std::cout << "Failed to read file ../Files/results.txt\n";
+        //std::cout << "Failed to read file ../Files/results.txt\n";
         m_best_score = 0;
         m_best_game_time = 0.0f;
         return;
