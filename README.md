@@ -1,7 +1,7 @@
 ![CI](https://github.com/IzabellaPavlova/AI-Takeover/actions/workflows/blank.yml/badge.svg)
 
 # AI-Takeover
-Игра платформер в стиле Марио
+Игра платформер в стиле Марио\
 https://docs.google.com/presentation/d/1qonMINX06gSZM5v2NFCbbw4elokjH49ZtKMwoVQch3Y/edit?usp=sharing
 
 ## Team
